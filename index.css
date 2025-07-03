@@ -1,10 +1,148 @@
-*{
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+a {
+    text-decoration: none;
+    color: black;
+    text-decoration: underline;
+
+
+}
+
+body {
+    font-family: "Ubuntu Mono", monospace;
+    font-weight: 400;
+    font-style: normal;
+    transition: background-color 0.5s ease, color 0.5s ease;
+    font-size: large;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: aliceblue;
+    color: black;
+    padding: 0.5rem 3rem;
+}
+
+header ul {
+    display: flex;
+    gap: 0 1rem;
+    list-style: none;
+    font-size: larger;
+    align-items: center;
+}
+
+.dark-mode {
+    background-color: #111;
+    color: #eee;
+}
+
+#smBlock {
+    display: none;
+}
+
+header,
+footer {
+    transition: background-color 0.5s ease;
+}
+
+.dark-mode header {
+    background-color: #222;
+    color: #fff;
+}
+
+.dark-mode footer {
+    background-color: #222;
+    color: #fff;
+}
+
+.dark-mode a {
+    color: #fff;
+}
+
+.dark-mode #navSm {
+    background-color: #222;
+}
+
+
+main {
+    padding: 1rem 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem 0;
+}
+
+main ul {
+    margin-bottom: .5rem;
+}
+
+#switch {
+    outline: none;
+    background-color: transparent;
+    border: none;
+    font-size: larger;
+}
+
+footer {
+    text-align: center;
+    background-color: aliceblue;
+    color: black;
+    padding: 1rem 0;
+}
+
+@media (max-width:768px) {
 body{
-    font-family: monospace;
-    background-color: #3296;
+    font-size: larger;
+}
+    header {
+        display: flex;
+        justify-content: flex-start;
+        padding: 0;
+        gap: 0 .5rem;
+        text-align: center;
+    }
+    #clickToggle{
+        margin:  0 1rem;
+    }
+
+    #smBlock {
+        display: block;
+    }
+
+    #nav {
+        display: none;
+    }
+
+    #navSm {
+        opacity: 0;
+        transform: translateY(-20px);
+        pointer-events: none;
+        position: absolute;
+        background-color: aliceblue;
+        padding: 0.5rem 1rem;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        transition: opacity 0.4s ease, transform 0.4s ease;
+        z-index: 999;
+      }
+      
+      #navSm.show {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+      }
+      
+    #nameSm {
+        flex: 0 1 100%;
+    }
+
 }
