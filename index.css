@@ -83,7 +83,7 @@ main ul {
     margin-bottom: .5rem;
 }
 
-#switch {
+.switch {
     outline: none;
     background-color: transparent;
     border: none;
@@ -144,5 +144,6 @@ body{
     #nameSm {
         flex: 0 1 100%;
     }
+
 
 }
