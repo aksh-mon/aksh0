@@ -1,15 +1,19 @@
 window.addEventListener("DOMContentLoaded", () => {
-  const btn = document.querySelectorAll("#switch");
+  const btns = document.querySelectorAll(".switch");
   const toggle = document.getElementById("clickToggle");
-  btn.forEach((e) => {
-    e.addEventListener("click", () => {
+
+  btns.forEach((btn) => {
+    btn.addEventListener("click", () => {
       document.body.classList.toggle("dark-mode");
 
-      if (document.body.classList.contains("dark-mode")) {
-        btn.textContent = "🌚";
-      } else {
-        btn.textContent = "☀️";
-      }
+      // Update ALL toggle buttons to the same state
+      btns.forEach((b) => {
+        if (document.body.classList.contains("dark-mode")) {
+          b.textContent = "🌚";
+        } else {
+          b.textContent = "☀️";
+        }
+      });
     });
   });
 
